@@ -32,10 +32,6 @@ There's a git mirror if you prefer:
 
     git clone http://github.com/sjl/gundo.vim.git ~/.vim/bundle/gundo
 
-Add a mapping to your `~/.vimrc` (change the key to suit your taste):
-
-    nnoremap <F5> :GundoToggle<CR>
-
 [Pathogen]: http://www.vim.org/scripts/script.php?script_id=2332
 
 Usage
@@ -53,3 +49,17 @@ a diff of the change made by the undo state you're currently on.
 
 Press return to revert the file's contents to that undo state and return to the
 file.
+
+Configuring Gundo
+-----------------
+
+Out of the box, you can toggle the Gundo window using the `<F5>` key. You can
+customize the trigger to suit your taste by creating a mapping in your `.vimrc`
+file. For example, if you wanted to use `,u` to trigger Gundo, you could add
+the following to your `~/.vimrc`:
+
+    let mapleader = ","
+    nnoremap <leader>u :GundoToggle<CR>
+
+If you create your own mapping, then the `<F5>` key will not toggle the Gundo
+window.
