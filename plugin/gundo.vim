@@ -963,3 +963,7 @@ command! -nargs=0 GundoRenderGraph call s:GundoRenderGraph()
 autocmd BufNewFile __Gundo__ call s:GundoSettingsGraph()
 autocmd BufNewFile __Gundo_Preview__ call s:GundoSettingsPreview()
 "}}}
+
+if !hasmapto(':GundoToggle<CR>')
+    map <unique> <F5> :GundoToggle<CR>
+endif
